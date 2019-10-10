@@ -46,6 +46,7 @@ class ConsumerManager
             $annotation->exchange && $instance->setExchange($annotation->exchange);
             $annotation->routingKey && $instance->setRoutingKey($annotation->routingKey);
             $annotation->queue && $instance->setQueue($annotation->queue);
+            $annotation->prefetchCount && $instance->setPrefetchCount($annotation->prefetchCount);
             property_exists($instance, 'container') && $instance->container = $this->container;
             $nums = $annotation->nums;
             $process = $this->createProcess($instance);
